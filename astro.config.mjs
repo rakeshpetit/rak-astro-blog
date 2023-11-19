@@ -9,5 +9,9 @@ export default defineConfig({
   adapter: netlify({
     edgeMiddleware: true,
   }),
-  integrations: [tailwind()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
 });
