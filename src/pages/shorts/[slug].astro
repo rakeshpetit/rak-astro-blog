@@ -1,0 +1,35 @@
+---
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+import "../../styles/tailwind.css";
+
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const shorts = await getCollection("shorts");
+  return shorts.map((short) => ({
+    params: { slug: short.slug },
+    props: { short },
+  }));
+}
+const { short } = Astro.props;
+const { Content } = await short.render();
+---
+
+<html lang="en" class="h-full">
+  <Header />
+  <main class="relative min-h-almost sm:flex sm:items-center sm:justify-center">
+    <section>
+      <h1
+        class="mt-2 mb-4 text-center font-bold text-2xl text-cyan-700 lg:text-4xl"
+      >
+        {short.data.title}
+      </h1>
+      <article
+        class="prose prose-pink prose-headings:font-bold lg:text-2xl lg:leading-relaxed pb-4"
+      >
+        <Content />
+      </article>
+    </section>
+  </main>
+  <Footer />
+</html>

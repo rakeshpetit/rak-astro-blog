@@ -1041,12 +1041,55 @@ video {
   --tw-prose-invert-links: #3b82f6;
 }
 
+.prose-pink {
+  --tw-prose-links: #1e3a8a;
+  --tw-prose-invert-links: #fff;
+  --tw-prose-body: #155e75;
+  --tw-prose-headings: #164e63;
+  --tw-prose-lead: #0e7490;
+  --tw-prose-bold: #164e63;
+  --tw-prose-counters: #0891b2;
+  --tw-prose-bullets: #f87171;
+  --tw-prose-hr: #67e8f9;
+  --tw-prose-quotes: #164e63;
+  --tw-prose-quote-borders: #67e8f9;
+  --tw-prose-captions: #0e7490;
+  --tw-prose-code: #164e63;
+  --tw-prose-pre-code: #d1fae5;
+  --tw-prose-pre-bg: #064e3b;
+  --tw-prose-th-borders: #67e8f9;
+  --tw-prose-td-borders: #a5f3fc;
+  --tw-prose-invert-body: #a5f3fc;
+  --tw-prose-invert-headings: #fff;
+  --tw-prose-invert-lead: #67e8f9;
+  --tw-prose-invert-bold: #fff;
+  --tw-prose-invert-counters: #22d3ee;
+  --tw-prose-invert-bullets: #0891b2;
+  --tw-prose-invert-hr: #0e7490;
+  --tw-prose-invert-quotes: #cffafe;
+  --tw-prose-invert-quote-borders: #0e7490;
+  --tw-prose-invert-captions: #22d3ee;
+  --tw-prose-invert-code: #fff;
+  --tw-prose-invert-pre-code: #67e8f9;
+  --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+  --tw-prose-invert-th-borders: #0891b2;
+  --tw-prose-invert-td-borders: #0e7490;
+}
+
 .relative {
   position: relative;
 }
 
 .my-4 {
   margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
   margin-bottom: 1rem;
 }
 
@@ -1064,6 +1107,10 @@ video {
 
 .mr-auto {
   margin-right: auto;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .block {
@@ -1096,6 +1143,10 @@ video {
 
 .min-h-almost {
   min-height: 75%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .w-5 {
@@ -1150,6 +1201,10 @@ video {
   border-radius: 9999px;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1187,12 +1242,22 @@ video {
   background-color: rgb(245 245 244 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .p-10 {
   padding: 2.5rem;
 }
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .px-6 {
@@ -1214,6 +1279,10 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .pr-2 {
   padding-right: 0.5rem;
 }
@@ -1226,6 +1295,11 @@ video {
   text-align: center;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1236,12 +1310,25 @@ video {
   line-height: 2.5rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .font-semibold {
   font-weight: 600;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .tracking-tight {
@@ -1251,6 +1338,11 @@ video {
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-cyan-700 {
+  --tw-text-opacity: 1;
+  color: rgb(14 116 144 / var(--tw-text-opacity));
 }
 
 .text-gray-400 {
@@ -1271,6 +1363,17 @@ video {
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-teal-600 {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
+}
+
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-md {
@@ -1305,6 +1408,10 @@ video {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+.prose-headings\:font-bold :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-weight: 700;
+}
+
 .prose-headings\:font-light :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-weight: 300;
 }
@@ -1315,6 +1422,20 @@ video {
 
 .prose-li\:font-mono :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@media (min-width: 640px) {
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:items-center {
+    align-items: center;
+  }
+
+  .sm\:justify-center {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1357,6 +1478,25 @@ video {
 
   .lg\:text-left {
     text-align: left;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .lg\:leading-relaxed {
+    line-height: 1.625;
   }
 }
 
