@@ -1,0 +1,28 @@
+---
+const { title, checked, id } = Astro.props;
+---
+
+<div class="wrapper flex flex-wrap justify-center">
+  <div class="tab px-4 py-2 relative rounded-md">
+    <input
+      type="checkbox"
+      checked={checked}
+      name="faq"
+      id={id}
+      class="appearance-none peer"
+    />
+    <label
+      for={id}
+      class="flex items-center cursor-pointer font-semibold text-lg after:content-['+'] after:absolute after:right-5 after:text-2xl after:text-gray-400 hover:after:text-teal-700 peer-checked:after:transform peer-checked:after:rotate-45"
+    >
+      <h2 class="text-xl font-bold leading-tight text-teal-700 lg:text-3xl">
+        {title}
+      </h2>
+    </label>
+    <div
+      class="answer content h-0 transition ease-in-out delay-300 overflow-hidden peer-checked:h-full"
+    >
+      <slot />
+    </div>
+  </div>
+</div>

@@ -10,9 +10,9 @@ const companies = await Astro.glob("../../content/profile/companies/*.md");
       {
         companies.map(({ Content }) => (
           <>
-            <div class="border-t border-gray-400" />
-            <Content />
-            <div class="border-t border-gray-400" />
+            <div class="shadow-lg p-2">
+              <Content />
+            </div>
           </>
         ))
       }
