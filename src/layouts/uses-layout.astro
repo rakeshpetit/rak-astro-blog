@@ -17,7 +17,9 @@ const { frontmatter } = Astro.props;
 <html lang="en" class="h-full">
   <Header title={frontmatter.title} />
   <body class="h-full">
-    <div class="items-center justify-center bg-sky-50">
+    <div
+      class="items-center justify-center bg-gradient-to-t from-teal-50 to-sky-50"
+    >
       <main class="relative min-h-almost py-8">
         <section>
           <h1

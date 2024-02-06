@@ -1,12 +1,21 @@
 ---
-import { getEntry } from "astro:content";
-
-const oracle = await getEntry("profile", "oracle");
-const { Content: Oracle } = await oracle.render();
+const companies = await Astro.glob("../../content/profile/companies/*.md");
 ---
 
-<article
-  class="prose prose-pink prose-headings:font-bold lg:text-2xl lg:leading-relaxed pb-4"
->
-  <Oracle />
-</article>
+<>
+  <div class="flex flex-wrap justify-center">
+    <article
+      class="prose prose-pink prose-headings:font-bold lg:text-xl lg:leading-relaxed"
+    >
+      {
+        companies.map(({ Content }) => (
+          <>
+            <div class="border-t border-gray-400" />
+            <Content />
+            <div class="border-t border-gray-400" />
+          </>
+        ))
+      }
+    </article>
+  </div>
+</>
