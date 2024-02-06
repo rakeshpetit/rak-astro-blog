@@ -14,4 +14,5 @@ const blogCollection = defineCollection({
 export const collections = {
   posts: blogCollection,
   shorts: blogCollection,
+  profile: blogCollection,
 };
