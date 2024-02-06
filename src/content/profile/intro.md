@@ -1,7 +1,7 @@
 ---
+sequence: 1
 title: "Profile"
-isDraft: false
-date: "06/02/2024"
+group: "intro"
 slug: "intro"
 ---
 

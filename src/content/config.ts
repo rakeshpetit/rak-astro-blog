@@ -11,8 +11,19 @@ const blogCollection = defineCollection({
   schema,
 });
 
+const profileSchema = z.object({
+  title: z.string(),
+  group: z.string(),
+  sequence: z.number(),
+});
+
+const profileCollection = defineCollection({
+  type: "content",
+  schema: profileSchema,
+});
+
 export const collections = {
   posts: blogCollection,
   shorts: blogCollection,
-  profile: blogCollection,
+  profile: profileCollection,
 };
