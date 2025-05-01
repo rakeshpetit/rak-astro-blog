@@ -11,12 +11,12 @@
     "generate:css": "tailwindcss -o ./src/styles/tailwind.css"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.1",
-    "@astrojs/netlify": "^3.0.4",
-    "@astrojs/tailwind": "^5.0.2",
-    "astro": "^3.5.5",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "@astrojs/check": "^0.5.0",
+    "@astrojs/netlify": "^6.3.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^5.7.10",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10"
