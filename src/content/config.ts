@@ -4,6 +4,7 @@ const schema = z.object({
   title: z.string(),
   isDraft: z.boolean(),
   date: z.string(),
+  slug: z.string().optional(),
 });
 
 const blogCollection = defineCollection({

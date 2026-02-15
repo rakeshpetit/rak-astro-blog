@@ -8,71 +8,76 @@ import "../../styles/tailwind.css";
 import { getEntry } from "astro:content";
 
 const profile = await getEntry("profile", "intro");
+if (!profile) {
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not found'
+  });
+}
 const { Content } = await profile.render();
 ---
 
 <html lang="en" class="h-full">
-  <Header />
-  <body class="h-full">
-    <div
-      class="items-center justify-center bg-gradient-to-t from-indigo-100 to-indigo-50"
-    >
-      <main class="relative min-h-almost py-8">
-        <section>
-          <div class="flex flex-wrap justify-center">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Profile | Rakesh Arun</title>
+  </head>
+  <body class="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 antialiased">
+    <Header />
+    <main class="mx-auto w-full max-w-5xl flex-grow px-4 py-16 sm:px-6 lg:px-8">
+      <section class="mb-20">
+        <div class="flex flex-col items-center gap-12 lg:flex-row">
+          <div class="relative shrink-0">
+            <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-75 blur"></div>
             <img
-              class="h-auto w-2/6 rounded-full xl:w-1/5"
-              alt="Uses"
+              class="relative h-48 w-48 rounded-full border-4 border-white object-cover shadow-xl lg:h-64 lg:w-64"
+              alt="Rakesh Arun"
               src="https://res.cloudinary.com/dcrbjmmo4/image/upload/c_fill,h_300,w_300/v1707230660/Rakesh_Arun__slack.jpg"
             />
-            <div class="mx-4">
-              <h1
-                class="mt-2 mb-4 text-center font-bold text-2xl text-teal-700 lg:text-4xl"
-              >
-                {profile.data.title}
-              </h1>
-              <article
-                class="prose prose-pink prose-headings:font-bold lg:text-xl lg:leading-relaxed pb-4"
-              >
-                <Content />
-              </article>
+          </div>
+          <div>
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              {profile.data.title}
+            </h1>
+            <div class="mt-6 prose prose-blue max-w-none prose-p:text-xl prose-p:leading-relaxed text-gray-600">
+              <Content />
             </div>
           </div>
-        </section>
-        <section class="mt-4">
-          <TestAccordion
-            checked
-            id="mobileExp"
-            title="Mobile development experience"
-          >
-            <div class="flex flex-wrap justify-center">
-              <article
-                class="prose prose-pink prose-headings:font-bold lg:text-xl lg:leading-relaxed"
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-              </article>
-            </div>
-          </TestAccordion>
-        </section>
-        <section class="mt-4">
-          <TestAccordion
-            id="previousExp"
-            title="Experience prior to mobile development"
-          >
+        </div>
+      </section>
+
+      <div class="space-y-6">
+        <TestAccordion
+          checked
+          id="mobileExp"
+          title="Mobile Development Experience"
+        >
+          <article class="prose prose-blue max-w-none py-4">
+            <p class="text-lg leading-relaxed text-gray-700">
+              With over half a decade in mobile development, I've specialized in building high-performance, cross-platform applications using React Native. My focus is on creating seamless user experiences that feel native while maintaining a clean, maintainable codebase.
+            </p>
+            <ul>
+              <li>Expertise in React Native and the Expo ecosystem</li>
+              <li>Strong focus on performance optimization and animations</li>
+              <li>Experience with native modules and integration</li>
+              <li>Building robust architectures for large-scale apps</li>
+            </ul>
+          </article>
+        </TestAccordion>
+
+        <TestAccordion
+          id="previousExp"
+          title="Experience Prior to Mobile"
+        >
+          <div class="py-4">
             <Company />
-          </TestAccordion>
-        </section>
-      </main>
-      <Footer />
-    </div>
+          </div>
+        </TestAccordion>
+      </div>
+    </main>
+    <Footer />
   </body>
 </html>

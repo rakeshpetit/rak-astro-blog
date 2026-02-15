@@ -15,38 +15,48 @@ const { frontmatter } = Astro.props;
 ---
 
 <html lang="en" class="h-full">
-  <Header title={frontmatter.title} />
-  <body class="h-full">
-    <div
-      class="items-center justify-center bg-gradient-to-t from-teal-50 to-sky-50"
-    >
-      <main class="relative min-h-almost py-8">
-        <section>
-          <h1
-            class="my-4 flex justify-center text-4xl font-bold tracking-tight"
-          >
-            {frontmatter.title}
-          </h1>
-          <div class="flex flex-wrap justify-center">
-            <img
-              class="h-auto w-5/6 rounded-full xl:w-3/5"
-              alt="Uses"
-              src={frontmatter.image}
-            />
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title} | Rakesh Arun</title>
+  </head>
+  <body class="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 antialiased">
+    <Header />
+    <main class="mx-auto w-full max-w-4xl flex-grow px-4 py-16 sm:px-6 lg:px-8">
+      <section class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200">
+        <div class="p-8 sm:p-12">
+          <header class="mb-12 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              {frontmatter.title}
+            </h1>
+            <p class="mt-4 text-lg text-gray-500">
+              A collection of the tools, gear, and software I use on a daily basis.
+            </p>
+          </header>
+
+          <div class="mb-16 flex justify-center">
+            <div class="relative group">
+              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-20 blur transition-opacity group-hover:opacity-40"></div>
+              <img
+                class="relative h-auto w-full max-w-2xl rounded-2xl object-cover shadow-2xl"
+                alt="My Setup"
+                src={frontmatter.image}
+              />
+            </div>
           </div>
-          <div class="flex flex-wrap justify-center">
-            <article
-              class="prose prose-blue prose-headings:font-light prose-h1:mt-8 prose-li:font-mono"
-            >
-              <slot />
-            </article>
+
+          <article class="prose prose-blue max-w-none prose-headings:scroll-mt-20">
+            <slot />
+          </article>
+          
+          <div class="mt-16 border-t border-gray-50 pt-8 text-center">
+            <p class="text-sm text-gray-400">Last updated: {frontmatter.date}</p>
           </div>
-          <div class="flex flex-0 pt-4 pb-2 pr-2 justify-end">
-            <p class="text-gray-400">Updated on: {frontmatter.date}</p>
-          </div>
-        </section>
-        <Footer />
-      </main>
-    </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
   </body>
 </html>
