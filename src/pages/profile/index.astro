@@ -25,24 +25,24 @@ const { Content } = await profile.render();
     <meta name="generator" content={Astro.generator} />
     <title>Profile | Rakesh Arun</title>
   </head>
-  <body class="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 antialiased">
+  <body class="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100">
     <Header />
     <main class="mx-auto w-full max-w-5xl flex-grow px-4 py-16 sm:px-6 lg:px-8">
       <section class="mb-20">
         <div class="flex flex-col items-center gap-12 lg:flex-row">
           <div class="relative shrink-0">
-            <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-75 blur"></div>
+            <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-75 blur dark:from-blue-400 dark:to-indigo-400"></div>
             <img
-              class="relative h-48 w-48 rounded-full border-4 border-white object-cover shadow-xl lg:h-64 lg:w-64"
+              class="relative h-48 w-48 rounded-full border-4 border-white object-cover shadow-xl lg:h-64 lg:w-64 dark:border-gray-800"
               alt="Rakesh Arun"
               src="https://res.cloudinary.com/dcrbjmmo4/image/upload/c_fill,h_300,w_300/v1707230660/Rakesh_Arun__slack.jpg"
             />
           </div>
           <div>
-            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
               {profile.data.title}
             </h1>
-            <div class="mt-6 prose prose-blue max-w-none prose-p:text-xl prose-p:leading-relaxed text-gray-600">
+            <div class="mt-6 prose prose-blue max-w-none prose-p:text-xl prose-p:leading-relaxed text-gray-600 dark:prose-invert dark:text-gray-300">
               <Content />
             </div>
           </div>
@@ -55,8 +55,8 @@ const { Content } = await profile.render();
           id="mobileExp"
           title="Mobile Development Experience"
         >
-          <article class="prose prose-blue max-w-none py-4">
-            <p class="text-lg leading-relaxed text-gray-700">
+          <article class="prose prose-blue max-w-none py-4 dark:prose-invert">
+            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
               With over half a decade in mobile development, I've specialized in building high-performance, cross-platform applications using React Native. My focus is on creating seamless user experiences that feel native while maintaining a clean, maintainable codebase.
             </p>
             <ul>

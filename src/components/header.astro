@@ -1,13 +1,14 @@
 ---
+import ThemeToggle from "./theme-toggle.astro";
 ---
 
 <nav
-  class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md"
+  class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/80"
 >
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center">
-        <a class="flex items-center gap-2 text-blue-600 transition-colors hover:text-blue-700" href="/">
+        <a class="flex items-center gap-2 text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300" href="/">
           <svg
             class="h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"
@@ -18,39 +19,28 @@
               d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"
             ></path>
           </svg>
-          <span class="text-xl font-bold tracking-tight text-gray-900">Rakesh Arun</span>
+          <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Rakesh Arun</span>
         </a>
       </div>
       <div class="hidden md:block">
         <div class="flex items-center gap-6">
           <a
             href="/"
-            class="text-sm font-semibold text-gray-600 transition-colors hover:text-blue-600"
+            class="text-sm font-semibold text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
           >
             Home
           </a>
           <a
             href="/uses"
-            class="text-sm font-semibold text-gray-600 transition-colors hover:text-blue-600"
+            class="text-sm font-semibold text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
           >
             Uses
           </a>
-          <a
-            href="/shorts"
-            class="text-sm font-semibold text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Shorts
-          </a>
-          <a
-            href="/posts"
-            class="text-sm font-semibold text-gray-600 transition-colors hover:text-blue-600"
-          >
-            Posts
-          </a>
         </div>
       </div>
-      <div class="flex items-center md:hidden">
-        <button id="mobile-menu-toggle" type="button" class="rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 focus:outline-none">
+      <div class="flex items-center gap-2">
+        <ThemeToggle />
+        <button id="mobile-menu-toggle" type="button" class="rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300 md:hidden">
           <span class="sr-only">Open menu</span>
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -59,31 +49,19 @@
       </div>
     </div>
   </div>
-  <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md">
+  <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95">
     <div class="space-y-1 px-4 py-6 shadow-xl">
       <a
         href="/"
-        class="block rounded-lg px-3 py-4 text-base font-bold text-gray-900 hover:bg-gray-50 hover:text-blue-600"
+        class="block rounded-lg px-3 py-4 text-base font-bold text-gray-900 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-blue-400"
       >
         Home
       </a>
       <a
         href="/uses"
-        class="block rounded-lg px-3 py-4 text-base font-bold text-gray-900 hover:bg-gray-50 hover:text-blue-600"
+        class="block rounded-lg px-3 py-4 text-base font-bold text-gray-900 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-blue-400"
       >
         Uses
-      </a>
-      <a
-        href="/shorts"
-        class="block rounded-lg px-3 py-4 text-base font-bold text-gray-900 hover:bg-gray-50 hover:text-blue-600"
-      >
-        Shorts
-      </a>
-      <a
-        href="/posts"
-        class="block rounded-lg px-3 py-4 text-base font-bold text-gray-900 hover:bg-gray-50 hover:text-blue-600"
-      >
-        Posts
       </a>
     </div>
   </div>

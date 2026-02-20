@@ -22,23 +22,23 @@ const { frontmatter } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{frontmatter.title} | Rakesh Arun</title>
   </head>
-  <body class="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 antialiased">
+  <body class="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100">
     <Header />
     <main class="mx-auto w-full max-w-4xl flex-grow px-4 py-16 sm:px-6 lg:px-8">
-      <section class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200">
+      <section class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
         <div class="p-8 sm:p-12">
           <header class="mb-12 text-center">
-            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
               {frontmatter.title}
             </h1>
-            <p class="mt-4 text-lg text-gray-500">
+            <p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
               A collection of the tools, gear, and software I use on a daily basis.
             </p>
           </header>
 
           <div class="mb-16 flex justify-center">
             <div class="relative group">
-              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-20 blur transition-opacity group-hover:opacity-40"></div>
+              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-20 blur transition-opacity group-hover:opacity-40 dark:from-blue-400 dark:to-indigo-400"></div>
               <img
                 class="relative h-auto w-full max-w-2xl rounded-2xl object-cover shadow-2xl"
                 alt="My Setup"
@@ -47,12 +47,12 @@ const { frontmatter } = Astro.props;
             </div>
           </div>
 
-          <article class="prose prose-blue max-w-none prose-headings:scroll-mt-20">
+          <article class="prose prose-blue max-w-none prose-headings:scroll-mt-20 dark:prose-invert">
             <slot />
           </article>
-          
-          <div class="mt-16 border-t border-gray-50 pt-8 text-center">
-            <p class="text-sm text-gray-400">Last updated: {frontmatter.date}</p>
+
+          <div class="mt-16 border-t border-gray-50 pt-8 text-center dark:border-gray-700">
+            <p class="text-sm text-gray-400 dark:text-gray-500">Last updated: {frontmatter.date}</p>
           </div>
         </div>
       </section>
